@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Python Tutorials - Learn To Code Pakistan</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 0px;
+        }
+
+
+
+
+
+     header.masthead {
+  padding-top: 1rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url("D:/Downloads/update 11-1-2018/proj/startbootstrap-creative-gh-pages/Slide1.JPG");
+  background-position: center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: cover;
+  width: 100%;
+  height: auto;}
+  header.masthead hr {
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  header.masthead h1 {
+    font-size: 2rem; }
+  header.masthead p {
+    font-weight: 300; }
+  @media (min-width: 768px) {
+    header.masthead p {
+      font-size: 1.15rem; } }
+  @media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 650px;
+      padding-top: 0;
+      padding-bottom: 0; }
+      header.masthead h1 {
+        font-size: 3rem; } }
+  @media (min-width: 1200px) {
+    header.masthead h1 {
+      font-size: 4rem; } }
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+
+        
+        #trailer .modal-dialog {
+            margin-top: 100px;
+            max-width: 960px;
+            width: auto;
+            height: 100%;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            allowfullscreen:allowfullscreen;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+
+
+.btn{position:absolute;font-weight:700;text-transform:uppercase;border:none;border-radius:300px;font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}
+.btn-xl{position:absolute;padding:1rem 2rem}
+.btn-primary{background-color:#f05f40;border-color:#f05f40}
+.btn-primary:active,.btn-primary:focus,.btn-primary:hover{color:#fff;background-color:#ee4b28!important}
+.btn-primary:active,.btn-primary:focus{box-shadow:0 0 0 .2rem rgba(240,95,64,.5)!important}
+
+
+.footer {
+   position: static;
+   font-family: 'Roboto', sans-serif;
+   left: 0;
+   font: Roboto;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+
+
+
+        
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+
+<header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+    </header>
+</head>
+
+
+  <body>
+          
+
+  
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+       <ul class="topnav">
+  <li><a class="active" href="C:/Users/Shahe/Downloads/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/homepage.html">Home</a></li>
+  <li><a href="file:///C:/Users/Shahe/Downloads/n/Quiz/index.php">Quiz</a></li>
+
+</ul>
+
+        </div>
+      </div>
+    </div>
+
+
+<!-- Heading -->
+<div>
+<center><h1 class="fa fa-video-camera" style="font:'Roboto';font-size:42px;color:black">
+              Video Tutorials</h1></center></div>
+    
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="lJnvq0A_7WQ" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\How A Computer Understands Data\Slide1.JPG" width="100%" height="100%">
+    <h2>Programming 101</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="657yt4gYjRo" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide1.JPG" width="100%" height="100%">
+    <h2>Different Data Types</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2qRhruGoJ2Y" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide2.JPG" width="100%" height="100%">
+    <h2>Integers, Strings and Floats</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="9OK32jb_TdI" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide3.JPG" width="100%" height="100%">
+    <h2>Boolean Data Types</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DuJmL-YUa4A" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide4.JPG" width="100%" height="100%">
+    <h2>Integers</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="HWRnnfkeEW8" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide5.JPG" width="100%" height="100%">
+    <h2>Strings</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="g4bYN2GVeHc" data-toggle="modal" data-target="#trailer">
+    <img src="D:\Learn To Code Python Presentations\Different Variable Data Types In Python\Slide6.JPG" width="100%" height="100%">
+    <h2>Floats</h2>
+</div>
+
+    </div>
+
+
+    <div class="footer">
+ <p class="fa fa-copyright"><a href='C:/Users/Shahe/Downloads/startbootstrap-creative-gh-pages/startbootstrap-creative-gh-pages/homepage.html'> Learn To Code Pakistan</a></p>
+</div>
+  </body>
+</html>
